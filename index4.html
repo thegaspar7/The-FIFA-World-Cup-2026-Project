@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<title>FIFA World Cup 2026 — Information Hub</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;background:linear-gradient(135deg,#b8cfe8 0%,#9ab8d0 40%,#c2d8ec 80%,#a8c8e0 100%);background-attachment:fixed;color:#0f1e2e;min-height:100vh;padding-bottom:80px;font-size:clamp(.94rem,.25vw + .88rem,1.08rem)}
+.lg{background:rgba(255,255,255,.28);backdrop-filter:blur(22px) saturate(1.6);-webkit-backdrop-filter:blur(22px) saturate(1.6);border:1px solid rgba(255,255,255,.52);border-radius:24px;box-shadow:0 8px 32px rgba(31,38,135,.13),0 1.5px 0 rgba(255,255,255,.55) inset}
+.lg-card{background:rgba(255,255,255,.42);backdrop-filter:blur(18px) saturate(1.5);-webkit-backdrop-filter:blur(18px) saturate(1.5);border:1px solid rgba(255,255,255,.65);border-radius:16px;box-shadow:0 4px 18px rgba(31,38,135,.09),0 1px 0 rgba(255,255,255,.6) inset;padding:18px 20px;display:flex;flex-direction:column;gap:10px}
+.lg-card h3{margin-bottom:4px}
+.lg-hi{background:linear-gradient(135deg,rgba(255,200,40,.22),rgba(255,140,0,.14));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,180,40,.38);border-radius:16px;padding:18px 20px}
+.chip{background:rgba(255,255,255,.44);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.62);border-radius:50px;padding:6px 16px;font-size:.86rem;font-weight:700;color:#0d3a7a;display:inline-block}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid rgba(41,121,255,.9);outline-offset:3px;border-radius:6px}
+header{padding:clamp(32px,5vw,72px) 20px clamp(28px,4vw,56px);text-align:center;background:linear-gradient(135deg,rgba(255,200,60,.82),rgba(255,130,0,.65),rgba(255,80,80,.35));backdrop-filter:blur(16px) saturate(1.8);-webkit-backdrop-filter:blur(16px) saturate(1.8);border-bottom:1.5px solid rgba(255,255,255,.45);color:#0f1e2e;position:relative;overflow:hidden}
+header::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(255,255,255,.18) 0%,transparent 60%),radial-gradient(ellipse at 80% 50%,rgba(255,255,255,.12) 0%,transparent 60%);pointer-events:none}
+header h1{font-size:clamp(2rem,4.5vw + .8rem,3.6rem);font-weight:900;text-shadow:0 2px 12px rgba(255,255,255,.6);line-height:1.15;position:relative;z-index:1}
+header p{font-size:clamp(1rem,1.4vw + .5rem,1.3rem);font-weight:500;margin-top:10px;opacity:.88;position:relative;z-index:1}
+.header-flags{margin-top:14px;font-size:clamp(2rem,3.5vw,3rem);letter-spacing:10px;position:relative;z-index:1}
+.nav-container{position:sticky;top:0;z-index:1000;padding:10px 16px 6px;background:rgba(255,255,255,.18);backdrop-filter:blur(28px) saturate(2);-webkit-backdrop-filter:blur(28px) saturate(2);border-bottom:1px solid rgba(255,255,255,.38)}
+.navbar{display:flex;overflow-x:auto;gap:8px;padding:4px 2px 10px;scroll-behavior:smooth;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:rgba(255,255,255,.35) transparent}
+.navbar::-webkit-scrollbar{height:4px}
+.navbar::-webkit-scrollbar-thumb{background:rgba(255,255,255,.35);border-radius:10px}
+.navbar a{flex-shrink:0;display:inline-flex;align-items:center;gap:5px;color:#13273d;padding:10px 20px;text-decoration:none;font-weight:700;font-size:clamp(.76rem,.45vw + .63rem,.93rem);background:rgba(255,255,255,.42);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.62);border-radius:50px;transition:all .22s ease;box-shadow:0 3px 10px rgba(0,0,0,.06),0 1px 0 rgba(255,255,255,.55) inset;white-space:nowrap}
+.navbar a:hover{background:rgba(255,255,255,.62);transform:translateY(-2px)}
+.navbar a.active{background:linear-gradient(135deg,rgba(41,121,255,.82),rgba(21,84,182,.88));color:#fff;border-color:rgba(255,255,255,.65);box-shadow:0 6px 20px rgba(41,121,255,.32);transform:translateY(-2px)}
+.container{display:flex;flex-wrap:wrap;padding:22px;gap:22px;max-width:1520px;margin:0 auto}
+.side{flex:1 1 260px;max-width:310px;display:flex;flex-direction:column;gap:18px;padding:22px}
+.main{flex:1 1 500px;padding:32px 36px;min-width:0}
+.content-section{display:none}
+.content-section.active-content{display:flex;flex-direction:column;gap:20px;animation:fadeUp .38s ease forwards}
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+h2{color:#071525;font-size:clamp(1.3rem,1.6vw + .85rem,1.95rem);font-weight:800;border-bottom:2px solid rgba(11,29,48,.1);padding-bottom:9px;margin-bottom:4px}
+h3{color:#0a1f35;font-size:clamp(1rem,.9vw + .75rem,1.22rem);font-weight:700;margin-bottom:6px}
+p{line-height:1.78;color:#1a2e42;margin-bottom:4px}
+ul{padding-left:22px;line-height:1.78;color:#1a2e42}
+li{margin-bottom:10px}
+strong{color:#0a1f35}
+.section-image{width:100%;border-radius:18px;object-fit:cover;max-height:260px;border:1.5px solid rgba(255,255,255,.65);box-shadow:0 8px 28px rgba(31,38,135,.14);display:block}
+.stat-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.widget-box{background:rgba(255,255,255,.38);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border:1px solid rgba(255,255,255,.65);border-radius:18px;padding:20px;display:flex;flex-direction:column;gap:11px;box-shadow:0 4px 18px rgba(31,38,135,.09),0 1px 0 rgba(255,255,255,.6) inset}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;background:linear-gradient(135deg,rgba(21,101,192,.90),rgba(13,55,156,.94));backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;padding:13px 20px;border-radius:13px;font-weight:700;border:1px solid rgba(255,255,255,.28);cursor:pointer;transition:all .2s ease;box-shadow:0 4px 14px rgba(21,101,192,.30),0 1px 0 rgba(255,255,255,.25) inset;font-size:clamp(.87rem,.2vw + .82rem,1rem);min-height:48px;min-width:48px;width:100%;text-decoration:none;text-align:center;touch-action:manipulation;-webkit-tap-highlight-color:rgba(0,0,0,0);user-select:none;-webkit-user-select:none;}
+.btn:hover{transform:translateY(-2px) scale(1.01);box-shadow:0 8px 22px rgba(21,101,192,.4)}
+.btn-green{background:linear-gradient(135deg,rgba(30,120,40,.90),rgba(15,75,25,.94));box-shadow:0 4px 14px rgba(30,120,40,.3)}
+.btn-green:hover{box-shadow:0 8px 22px rgba(30,120,40,.4)}
+.btn-grey{background:linear-gradient(135deg,rgba(100,116,130,.85),rgba(60,76,90,.9))}
+.btn-sm{width:auto;padding:11px 22px;font-size:.9rem}
+.btn-reset{background:linear-gradient(135deg,rgba(100,116,130,.85),rgba(60,76,90,.9));margin-top:-4px}
+.pred-row{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.40);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.65);border-radius:14px;padding:14px 18px;box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.pred-row label{flex:1;font-weight:700;font-size:.95rem;color:#0a1f35}
+.pred-row input[type=number]{width:62px;padding:8px;border-radius:9px;border:2px solid rgba(41,121,255,.3);text-align:center;font-size:1rem;font-weight:800;background:rgba(255,255,255,.78);color:#0a1f35;-webkit-appearance:none;}
+.pred-row span{font-weight:800;color:#1565c0;font-size:1.1rem}
+#prediction-output{display:none;background:rgba(255,255,255,.44);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.68);border-radius:14px;padding:16px 20px;font-size:.97rem;line-height:1.85}
+.pred-item{padding:11px 14px;border-radius:10px;background:rgba(21,101,192,.08);border:1px solid rgba(21,101,192,.14);margin-bottom:8px}
+.dynamic-panel{display:none;margin-top:24px;padding:24px;background:rgba(255,255,255,.40);backdrop-filter:blur(20px) saturate(1.5);-webkit-backdrop-filter:blur(20px) saturate(1.5);border:1px solid rgba(255,255,255,.65);border-radius:20px;box-shadow:0 6px 22px rgba(31,38,135,.10)}
+.poster-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(138px,1fr));gap:11px}
+.poster-group{background:rgba(255,255,255,.58);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.72);border-radius:14px;padding:13px 10px;text-align:center;font-size:.84rem;display:flex;flex-direction:column;gap:5px;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.poster-group strong{color:#1565c0;display:block;margin-bottom:4px}
+.sweep-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:12px}
+.sweep-ticket{background:linear-gradient(145deg,rgba(255,255,255,.74),rgba(230,242,255,.74));backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:2px solid rgba(41,121,255,.18);border-radius:16px;padding:18px 12px;text-align:center;display:flex;flex-direction:column;gap:7px;box-shadow:0 4px 14px rgba(0,0,0,.08);position:relative;overflow:hidden}
+.sweep-ticket::before{content:"⚽";position:absolute;top:-6px;right:-4px;font-size:3rem;opacity:.06}
+.t-num{font-size:.72rem;color:#888;font-weight:700;letter-spacing:1px}
+.t-flag{font-size:2rem}
+.t-name{font-weight:800;color:#0d3a7a;font-size:.97rem}
+.t-conf{font-size:.73rem;color:#555;background:rgba(41,121,255,.1);border-radius:50px;padding:3px 10px;display:inline-block}
+.form-group{display:flex;flex-direction:column;gap:6px}
+.form-group label{font-weight:700;font-size:.95rem;color:#0a1f35}
+.form-group input,.form-group textarea{padding:12px 14px;border-radius:11px;border:1.5px solid rgba(41,121,255,.22);background:rgba(255,255,255,.55);backdrop-filter:blur(10px);font-family:inherit;font-size:.95rem;color:#0a1f35;transition:border-color .2s,background .2s;min-height:46px}
+.form-group input:focus,.form-group textarea:focus{border-color:rgba(41,121,255,.65);background:rgba(255,255,255,.82)}
+#form-success{display:none;padding:16px;border-radius:14px;background:rgba(30,120,40,.14);border:1px solid rgba(30,120,40,.3);color:#155220;font-weight:700;text-align:center;backdrop-filter:blur(10px)}
+footer{text-align:center;padding:24px 20px;margin-top:40px;background:rgba(255,255,255,.20);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:1px solid rgba(255,255,255,.40);font-size:.9rem;color:#2a3d52}
+@media(max-width:900px){.side{max-width:100%;flex-direction:row;flex-wrap:wrap;padding:16px}.widget-box{flex:1 1 220px}.main{padding:22px 18px}}
+@media(max-width:600px){.container{padding:12px;gap:14px}.main{padding:18px 14px}.navbar a{padding:9px 15px;font-size:.75rem}.pred-row{flex-wrap:wrap}.pred-row label{flex:1 1 100%}}
+@media(max-width:480px){.btn{min-height:52px;font-size:.9rem;border-radius:14px}.widget-box{padding:16px}.btn-sm{width:100%;}}
+@media(hover:none){.btn:hover{transform:none;box-shadow:0 4px 14px rgba(21,101,192,.30)}.btn:active{transform:scale(.97);opacity:.9}.navbar a:hover{transform:none}.navbar a:active{background:linear-gradient(135deg,rgba(41,121,255,.82),rgba(21,84,182,.88));color:#fff}}
+</style>
+</head>
+<body>
+<header>
+  <h1>⚽ FIFA World Cup 2026</h1>
+  <p>Your Complete Global Tournament &amp; Qualification Hub</p>
+  <div class="header-flags">🇺🇸 🇲🇽 🇨🇦</div>
+</header>
+<div class="nav-container">
+  <nav class="navbar" role="tablist">
+    <a href="#" id="tab-rules" class="active" role="tab" onclick="switchTab(event,'rules')">📋 Rules</a>
+    <a href="#" id="tab-var" role="tab" onclick="switchTab(event,'var')">📹 VAR</a>
+    <a href="#" id="tab-history" role="tab" onclick="switchTab(event,'history')">🏆 History</a>
+    <a href="#" id="tab-format" role="tab" onclick="switchTab(event,'format')">📐 2026 Format</a>
+    <a href="#" id="tab-africa" role="tab" onclick="switchTab(event,'africa')">🌍 CAF</a>
+    <a href="#" id="tab-asia" role="tab" onclick="switchTab(event,'asia')">🌏 AFC</a>
+    <a href="#" id="tab-caribbean" role="tab" onclick="switchTab(event,'caribbean')">🏝️ CFU</a>
+    <a href="#" id="tab-europe" role="tab" onclick="switchTab(event,'europe')">🌐 UEFA</a>
+    <a href="#" id="tab-northamerica" role="tab" onclick="switchTab(event,'northamerica')">🌎 CONCACAF</a>
+    <a href="#" id="tab-southamerica" role="tab" onclick="switchTab(event,'southamerica')">🌎 CONMEBOL</a>
+    <a href="#" id="tab-centralamerica" role="tab" onclick="switchTab(event,'centralamerica')">🦅 UNCAF</a>
+    <a href="#" id="tab-stadiums" role="tab" onclick="switchTab(event,'stadiums')">🏟️ Stadiums</a>
+    <a href="#" id="tab-mascots" role="tab" onclick="switchTab(event,'mascots')">🎨 Branding</a>
+    <a href="#" id="tab-youngstars" role="tab" onclick="switchTab(event,'youngstars')">⭐ Stars</a>
+    <a href="#" id="tab-greengames" role="tab" onclick="switchTab(event,'greengames')">♻️ Eco</a>
+    <a href="#" id="tab-goldenglove" role="tab" onclick="switchTab(event,'goldenglove')">🥇 Awards</a>
+    <a href="#" id="tab-fanfests" role="tab" onclick="switchTab(event,'fanfests')">🎉 Fan Zones</a>
+    <a href="#" id="tab-predictor-tab" role="tab" onclick="switchTab(event,'predictor-tab')">🔮 Predictor</a>
+    <a href="#" id="tab-contact" role="tab" onclick="switchTab(event,'contact')">✉️ Contact</a>
+  </nav>
+</div>
+<div class="container">
+<aside class="side lg">
+  <div class="widget-box">
+    <h3>🗺️ Wall Chart</h3>
+    <p>Generate the complete 2026 FIFA Wall Chart — all 48 teams across 12 groups. Print or download instantly.</p>
+    <button class="btn" onclick="buildWallChart()">📥 Build Wall Chart</button>
+    <button class="btn btn-green" id="dl-wall-btn" style="display:none" onclick="downloadWallChartCSV()">📥 Download CSV</button>
+    <button class="btn btn-grey" id="pr-wall-btn" style="display:none" onclick="printWallChart()">🖨️ Print Chart</button>
+  </div>
+  <div class="widget-box">
+    <h3>🎟️ Sweepstake</h3>
+    <p>Randomly shuffle all 48 nations and generate printable numbered tickets — perfect for families, offices, or schools.</p>
+    <button class="btn" onclick="generateSweepstake()">🎲 Generate Tickets</button>
+    <button class="btn btn-green" id="dl-sweep-btn" style="display:none" onclick="downloadSweepstakeCSV()">📥 Download CSV</button>
+    <button class="btn btn-grey" id="pr-sweep-btn" style="display:none" onclick="printSweepstake()">🖨️ Print Tickets</button>
+  </div>
+  <div class="widget-box">
+    <h3>📊 Quick Stats</h3>
+    <ul style="padding-left:18px;font-size:.9rem">
+      <li><strong>48</strong> competing nations</li>
+      <li><strong>12</strong> groups of 4 teams</li>
+      <li><strong>104</strong> total matches</li>
+      <li><strong>16</strong> host venues</li>
+      <li><strong>3</strong> host nations</li>
+      <li><strong>11 Jun – 19 Jul 2026</strong></li>
+    </ul>
+  </div>
+</aside>
+<main class="main lg">
+<section id="rules" class="content-section active-content" role="tabpanel">
+<h2>The Laws of Football</h2>
+<img src="https://images.unsplash.com/photo-1551958219-acbc608c6377?w=900&q=80" alt="Football pitch aerial view" class="section-image" loading="lazy">
+<p>Football is governed by 17 Laws of the Game, maintained by the International Football Association Board (IFAB). These laws apply equally from a Sunday park kickabout to the FIFA World Cup final watched by over a billion people. The simplicity of the core rules is why football has universal appeal — yet within those 17 laws lies extraordinary tactical and technical depth that has kept the game evolving for over 150 years.</p>
+<div class="lg-card"><h3>Match Duration & Structure</h3><p>Standard matches are two 45-minute halves with a 15-minute half-time interval. Referees add injury time for stoppages, VAR checks, and substitutions. In knockout rounds, if level after 90 minutes, two 15-minute extra-time periods are played. If still level, a penalty shootout — five kicks each, then sudden death — decides the winner. FIFA's crackdown on time-wasting means 2026 matches are projected to see over 10 minutes of injury time per half, maximising effective playing time.</p></div>
+<div class="lg-card"><h3>The Offside Rule</h3><p>A player is offside if any goalscoring body part is closer to the opponents' goal line than both the ball and the second-last defender at the moment the ball is played. Cannot be offside from goal kicks, corners, or throw-ins. At 2026, SAOT (Semi-Automated Offside Technology) tracks 29 body points at 50 frames/second, delivering centimetre-accurate decisions in under 30 seconds with a 3D animation shown on stadium screens to explain every call in real time.</p></div>
+<div class="lg-card"><h3>Cards & Disciplinary Rules</h3><ul><li><strong>Yellow Card:</strong> Persistent fouling, time-wasting, simulation, dissent. Two yellows = red card and dismissal.</li><li><strong>Red Card:</strong> Serious foul play, violent conduct, deliberate handball to deny a goal. Team continues with 10 men.</li><li><strong>World Cup Suspensions:</strong> Two yellow cards across separate matches before the semi-finals = one-match ban. Slate cleared from the semis onward.</li></ul></div>
+<div class="lg-card"><h3>Other Key Laws</h3><ul><li><strong>Handball:</strong> Deliberate handball always a foul. Accidental handball leading directly to a goal also penalised.</li><li><strong>Penalty Kick:</strong> Awarded for fouls inside the area. Taken 12 yards from goal; keeper stays on line until ball is kicked.</li><li><strong>Substitutions:</strong> Up to 5 per match across 3 windows plus half-time. A 6th allowed if the game reaches extra time.</li><li><strong>Goal-Line Technology:</strong> Hawk-Eye cameras at all 16 venues confirm in under one second if the ball fully crossed the line.</li></ul></div>
+</section>
+<section id="var" class="content-section" role="tabpanel">
+<h2>VAR — Video Assistant Referee</h2>
+<img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=900&q=80" alt="Stadium screens night" class="section-image" loading="lazy">
+<p>Few innovations in football history have generated as much debate as VAR. Since its World Cup debut at Russia 2018, it has fundamentally changed how elite football is officiated — eliminating clear errors while simultaneously dividing opinion on whether accuracy justifies the cost to atmosphere and emotional spontaneity.</p>
+<div class="lg-card"><h3>VAR Timeline</h3><ul><li><strong>2012-2016:</strong> IFAB runs confidential trial matches. Results encouraging but process too slow.</li><li><strong>2017:</strong> Bundesliga becomes first top-flight league to deploy VAR publicly.</li><li><strong>2018:</strong> IFAB approves VAR. Russia World Cup is first to use it — 455 incidents reviewed, 20 decisions overturned.</li><li><strong>2019:</strong> Premier League, Serie A, La Liga implement VAR, triggering widespread controversy.</li><li><strong>2022:</strong> Semi-Automated Offside Technology debuts at Qatar 2022, cutting review times dramatically.</li><li><strong>2026:</strong> Enhanced SAOT with 29-point skeletal tracking. 45-second maximum review time. Decision rationale shown on stadium screens within 30 seconds.</li></ul></div>
+<div class="lg-card"><h3>The Four VAR Categories</h3><ul><li><strong>Goals:</strong> Every goal reviewed for offside, handball, or foul in the build-up.</li><li><strong>Penalty Decisions:</strong> Whether a foul or handball genuinely occurred inside the area.</li><li><strong>Direct Red Cards:</strong> Serious foul play or violent conduct missed by the on-field referee.</li><li><strong>Mistaken Identity:</strong> When a card is shown to the wrong player.</li></ul></div>
+<div class="lg-card"><h3>The Ongoing Controversy</h3><p>The core tension is accuracy versus atmosphere. Supporters argue overturning wrong decisions is simply the right thing to do. Critics counter that VAR kills emotional momentum, that millimetre offside decisions involving a player's armpit are philosophically absurd, and that goal celebrations are routinely suspended pending review. A 2023 UEFA survey found 61% of fans felt VAR made football less enjoyable despite 74% accepting it was more accurate. FIFA's 2026 pledges — 45-second maximum review windows and real-time rationale screens — aim to restore fan confidence while preserving accuracy gains.</p></div>
+</section>
+<section id="history" class="content-section" role="tabpanel">
+<h2>History of the FIFA World Cup</h2>
+<img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=900&q=80" alt="World Cup trophy golden" class="section-image" loading="lazy">
+<p>Over 1.5 billion people watched the 2022 World Cup final between Argentina and France — surpassing any Super Bowl, Olympics opening ceremony, or Champions League final in history. The FIFA World Cup is not merely the world's most watched sporting event; it is one of the most culturally significant collective human experiences on the planet.</p>
+<div class="lg-card"><h3>Tournament History</h3><ul><li><strong>1930 Uruguay:</strong> 13 invited nations. Uruguay beat Argentina 4-2 in the inaugural final.</li><li><strong>1950 Brazil:</strong> The Maracanazo — Uruguay stun Brazil 2-1 before an estimated 200,000 at the Maracana.</li><li><strong>1966 England:</strong> Geoff Hurst hat-trick in a 4-2 win over West Germany at Wembley. England's only title.</li><li><strong>1970 Mexico:</strong> Pele's Brazil score 19 goals and concede 7. Considered the greatest footballing team in history.</li><li><strong>1986 Mexico:</strong> Maradona's Hand of God and Goal of the Century against England in the same quarter-final. Argentina win.</li><li><strong>1994 USA:</strong> First final decided by penalties. Brazil beat Italy. Baggio's miss haunts him forever.</li><li><strong>2002 Korea/Japan:</strong> South Korea reach the semi-finals. Brazil win their fifth title.</li><li><strong>2010 South Africa:</strong> First World Cup on African soil. Spain win their first title via Iniesta's extra-time winner.</li><li><strong>2014 Brazil:</strong> Germany's stunning 7-1 semi-final demolition of Brazil. Gotze's winner secures Germany's fourth title.</li><li><strong>2018 Russia:</strong> France beat Croatia 4-2. Mbappe, 19, becomes the second teenager after Pele to score in a final.</li><li><strong>2022 Qatar:</strong> Greatest final ever. Argentina 3-3 France (Mbappe hat-trick) — Argentina win on penalties. Messi claims his trophy.</li></ul></div>
+<div class="lg-card"><h3>All-Time Champions</h3><div class="stat-row"><span class="chip">Brazil 5</span><span class="chip">Germany 4</span><span class="chip">Italy 4</span><span class="chip">Argentina 3</span><span class="chip">France 2</span><span class="chip">Uruguay 2</span><span class="chip">23 editions</span></div></div>
+</section>
+<section id="format" class="content-section" role="tabpanel">
+<h2>The 2026 Format Revolution</h2>
+<img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=900&q=80" alt="Tournament bracket" class="section-image" loading="lazy">
+<p>The 2026 FIFA World Cup marks the biggest structural overhaul in the tournament's 96-year history — expanding from 32 to 48 teams, a 50% increase, while redesigning the entire competition architecture to accommodate a genuinely global field without sacrificing knockout drama.</p>
+<div class="lg-card"><h3>The New Format</h3><ul><li>48 teams in <strong>12 groups of 4</strong></li><li>Top 2 per group advance — 24 teams</li><li><strong>8 best third-placed</strong> teams also qualify — 32 total</li><li>Brand new <strong>Round of 32</strong> introduced</li><li>Path: Groups → R32 → R16 → QF → SF → Final</li><li><strong>104 total matches</strong> (up from 64 at Qatar)</li></ul></div>
+<div class="lg-card"><h3>Key Dates</h3><ul><li><strong>Opening Match:</strong> 11 June 2026 — MetLife Stadium, NJ</li><li><strong>Group Stage:</strong> 11–27 June 2026</li><li><strong>Round of 32:</strong> 29 June – 4 July 2026</li><li><strong>Round of 16:</strong> 6–10 July 2026</li><li><strong>Quarter-Finals:</strong> 13–14 July 2026</li><li><strong>Semi-Finals:</strong> 17–18 July 2026</li><li><strong>Final:</strong> 19 July 2026 — MetLife Stadium, NJ</li></ul></div>
+<div class="lg-card"><h3>Continental Allocation</h3><div class="stat-row"><span class="chip">UEFA 16</span><span class="chip">CAF 9</span><span class="chip">AFC 8</span><span class="chip">CONMEBOL 6</span><span class="chip">CONCACAF 6+3 hosts</span><span class="chip">OFC 1</span><span class="chip">Play-offs 2</span></div></div>
+</section>
+<section id="africa" class="content-section" role="tabpanel">
+<h2>Africa (CAF) Qualification</h2>
+<img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=900&q=80" alt="African football fans" class="section-image" loading="lazy">
+<p>The 2026 expansion is a watershed moment for African football. CAF receives 9 direct slots — nearly double the previous 5 — reflecting the continent's explosive growth in talent, coaching standards, and competitive depth. Morocco's historic semi-final run at Qatar 2022 proved definitively that African teams can compete with and defeat the very best nations on earth.</p>
+<div class="lg-card"><h3>CAF Qualification Format</h3><p>54 CAF members enter 9 groups of 6, competing home and away across 18 months. Group winners (9 teams) earn automatic berths. Runners-up enter two-legged playoffs, with winners advancing to the inter-confederation play-off for a potential tenth African slot. The format rewards consistent sustained performance over one-off lottery matches.</p></div>
+<div class="lg-card"><h3>2026 Qualified Nations</h3><div class="stat-row"><span class="chip">Morocco</span><span class="chip">Senegal</span><span class="chip">Nigeria</span><span class="chip">Egypt</span><span class="chip">Ivory Coast</span><span class="chip">Ghana</span><span class="chip">Mali</span><span class="chip">Algeria</span><span class="chip">South Africa</span></div></div>
+<div class="lg-card"><h3>The Morocco Effect</h3><p>Morocco's Qatar 2022 campaign — defeating Spain on penalties, eliminating Portugal 1-0, pushing France to a 2-0 semi-final defeat — transformed global perceptions of African football. The Atlas Lions demonstrated that organised defensive structure, technical quality, and an intelligent high press could trouble any opponent. Their achievement triggered investment across African academies and strengthened FIFA's case for expanded African representation. Nigeria, Senegal, Ivory Coast, and Egypt all carry squads packed with Premier League and top European league professionals fully capable of reaching the knockout rounds.</p></div>
+</section>
+<section id="asia" class="content-section" role="tabpanel">
+<h2>Asia (AFC) Qualification</h2>
+<img src="https://images.unsplash.com/photo-1518604964836-3b3944d3b48f?w=900&q=80" alt="Asian football stadium" class="section-image" loading="lazy">
+<p>The AFC secures 8 direct berths for 2026 — up from just 4.5 — plus one inter-confederation play-off slot. Asia's football has evolved dramatically, with Japan producing players who compete consistently at the highest levels of Europe's elite leagues.</p>
+<div class="lg-card"><h3>AFC Qualification Structure</h3><p>Round 1: 26 lowest-ranked nations in two-legged ties. Round 2: 40 teams in 8 groups of 5, top 2 advance. Round 3: 18 teams in 3 groups of 6 — top 2 from each qualify automatically (6 spots). 3rd and 4th place teams enter a final playoff round for the remaining direct AFC berths and one inter-confederation play-off slot.</p></div>
+<div class="lg-card"><h3>2026 Qualified Nations</h3><div class="stat-row"><span class="chip">Japan</span><span class="chip">South Korea</span><span class="chip">Iran</span><span class="chip">Australia</span><span class="chip">Saudi Arabia</span><span class="chip">Uzbekistan</span><span class="chip">Qatar</span><span class="chip">Jordan</span></div></div>
+<div class="lg-card"><h3>Japan — Asia's Standard-Bearer</h3><p>Japan's squad — built almost entirely from Bundesliga, Premier League, and La Liga players — is Asia's most complete team in history. At Qatar 2022 they beat both Germany and Spain in the group stage before losing to Croatia on penalties. South Korea's new Bundesliga-powered generation and Iran's physically powerful defensive setup make Asia a genuinely competitive continental qualifier for the first time in the tournament's history.</p></div>
+</section>
+<section id="caribbean" class="content-section" role="tabpanel">
+<h2>Caribbean (CFU) Football</h2>
+<img src="https://images.unsplash.com/photo-1516912481808-3406841bd33c?w=900&q=80" alt="Caribbean stadium" class="section-image" loading="lazy">
+<p>With three CONCACAF giants auto-qualifying as hosts, Caribbean nations have an unprecedented path to the World Cup. The 2026 tournament expansion represents the greatest qualification opportunity in their footballing histories.</p>
+<div class="lg-card"><h3>The Route to 2026</h3><p>CFU nations compete within CONCACAF's tiered Nations League. Performance determines seeding into the CONCACAF Final Qualifiers — offering 3 direct World Cup berths and 2 inter-confederation play-off spots beyond the 3 automatic host entries. For smaller Caribbean islands, a first-ever World Cup qualification is genuinely within mathematical reach.</p></div>
+<div class="lg-card"><h3>Nations to Watch</h3><ul><li><strong>Jamaica:</strong> The Reggae Boyz blend MLS and European-based players. Genuine contenders who came agonisingly close to qualifying for 2018.</li><li><strong>Trinidad & Tobago:</strong> Famous for eliminating the USA from 2018 qualification. Rebuilding with ambition and pace.</li><li><strong>Haiti:</strong> Consistently underrated. Produces players for Ligue 1, Championship, and MLS. Raw athleticism and passion make them dangerous at any level.</li><li><strong>Cuba:</strong> Quietly improving under new federation leadership with better-resourced youth development.</li></ul></div>
+</section>
+<section id="europe" class="content-section" role="tabpanel">
+<h2>Europe (UEFA) Qualification</h2>
+<img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?w=900&q=80" alt="European football stadium" class="section-image" loading="lazy">
+<p>UEFA retains football's largest continental allocation with 16 direct spots. The UEFA qualifying campaign is one of the most intensely followed sporting competitions globally, broadcast to hundreds of millions every matchday across the continent.</p>
+<div class="lg-card"><h3>UEFA Qualification Format</h3><p>54 nations compete in 12 qualifying groups. Group winners (12 teams) qualify automatically. The 12 runners-up plus 4 Nations League group winners who did not otherwise qualify form 16 teams competing in 4 playoff paths — each producing 1 qualifier, bringing Europe's total to 16 teams. The Nations League integration means no European nation can be completely written off.</p></div>
+<div class="lg-card"><h3>2026 Qualified Nations</h3><div class="stat-row"><span class="chip">France</span><span class="chip">England</span><span class="chip">Germany</span><span class="chip">Spain</span><span class="chip">Portugal</span><span class="chip">Netherlands</span><span class="chip">Belgium</span><span class="chip">Italy</span><span class="chip">Serbia</span><span class="chip">Denmark</span><span class="chip">Austria</span><span class="chip">Switzerland</span><span class="chip">Croatia</span><span class="chip">Poland</span><span class="chip">Slovakia</span><span class="chip">Turkiye</span></div></div>
+<div class="lg-card"><h3>Title Contenders</h3><p><strong>France</strong> — Mbappe, Dembele, Camavinga, Tchouameni: arguably the most talented squad on earth. <strong>England</strong> — settled, experienced, Bellingham at peak. <strong>Spain</strong> — Lamine Yamal and Pedri represent the most electrifying young generation in European football. <strong>Germany</strong> — rebuilding with fresh, dangerous faces. <strong>Portugal</strong> — Bruno Fernandes era, technically rich and tactically flexible.</p></div>
+</section>
+<section id="northamerica" class="content-section" role="tabpanel">
+<h2>North America — The Host Nations</h2>
+<img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=900&q=80" alt="American football stadium" class="section-image" loading="lazy">
+<p>For the first time in history, three nations simultaneously share World Cup hosting duties. The USA, Canada, and Mexico form a tri-nation partnership spanning 9,000km of North America — creating the most logistically ambitious, geographically diverse, and culturally rich World Cup ever staged.</p>
+<div class="lg-card"><h3>USA — The Main Stage</h3><p>The USA hosts 60 of 104 matches including both semi-finals and the Grand Final at MetLife Stadium, New Jersey. The last US-hosted World Cup (1994) set all-time attendance records and sparked the creation of MLS — now one of the world's most-watched leagues. The USMNT, built around talented European-based players, are genuine dark horse contenders in front of a rapidly growing home fanbase whose passion will make their matches among the loudest atmospheres of the entire tournament.</p></div>
+<div class="lg-card"><h3>Mexico & Canada</h3><p><strong>Mexico</strong> becomes the first nation to host World Cup matches across three separate tournaments (1970, 1986, 2026). The legendary Estadio Azteca hosts matches for a historic third time. Mexico's squad will finally attempt to break their infamous "Quinto Partido" curse — they have never advanced beyond the quarter-finals.</p><p style="margin-top:10px"><strong>Canada</strong> hosts their first World Cup coinciding with the most exciting period in Canadian football history. Alphonso Davies (Bayern Munich), Jonathan David (Lille), and Tayo Buchanan represent a generation of Canadian players performing at genuine European elite level.</p></div>
+<div class="lg-card"><h3>CONCACAF 2026 Teams</h3><div class="stat-row"><span class="chip">USA (Host)</span><span class="chip">Mexico (Host)</span><span class="chip">Canada (Host)</span><span class="chip">Jamaica</span><span class="chip">Panama</span><span class="chip">Honduras</span></div></div>
+</section>
+<section id="southamerica" class="content-section" role="tabpanel">
+<h2>South America (CONMEBOL)</h2>
+<img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=900&q=80" alt="South American stadium" class="section-image" loading="lazy">
+<p>CONMEBOL qualification is the toughest campaign in world football. No seedings, no easy fixtures — all 10 nations play each other home and away across nearly two years. High altitude in La Paz, torrential rain in Asuncion, deafening noise in Buenos Aires. Brutal and beautiful in equal measure.</p>
+<div class="lg-card"><h3>Format</h3><p>All 10 nations in a single round-robin league — 18 matches each over 20 months. Top 6 qualify directly (up from 4.5 previously). 7th enters the inter-confederation play-off. 8th, 9th, 10th are eliminated. The expanded allocation intensifies the six-way battle for crucial 5th and 6th places among Chile, Colombia, Ecuador, and the rest.</p></div>
+<div class="lg-card"><h3>2026 Qualified Nations</h3><div class="stat-row"><span class="chip">Argentina</span><span class="chip">Brazil</span><span class="chip">Uruguay</span><span class="chip">Colombia</span><span class="chip">Chile</span><span class="chip">Ecuador</span></div></div>
+<div class="lg-card"><h3>Argentina — Defending Champions</h3><p>Argentina enter as defending World Cup and Copa America champions. Under Scaloni, the squad boasts remarkable depth: Emiliano Martinez in goal, Cristian Romero in defence, De Paul and Enzo Fernandez in midfield, Lautaro Martinez and Julian Alvarez in attack. Without Messi, a proud new generation carries the albiceleste shirt with fierce inherited ambition and a burning desire to prove 2022 was no one-off.</p></div>
+</section>
+<section id="centralamerica" class="content-section" role="tabpanel">
+<h2>Central America (UNCAF)</h2>
+<img src="https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=900&q=80" alt="Football match action" class="section-image" loading="lazy">
+<p>Central American nations — competing under the UNCAF umbrella within CONCACAF qualifying — represent some of the region's most passionate footballing cultures. The 2026 expansion offers these historically underrepresented nations a genuine route to the global stage for the first time in many of their histories.</p>
+<div class="lg-card"><h3>Nation Profiles</h3><ul><li><strong>Costa Rica:</strong> The region's standout performers — quarter-finalists at Brazil 2014 after beating Italy and Uruguay. Tactically disciplined, defensively organised, never to be underestimated.</li><li><strong>Honduras:</strong> Physical, energetic, dangerous on the counter. World Cup experience from 2010 and 2014.</li><li><strong>Panama:</strong> Russia 2018 debut celebrated nationally. Building steadily on that foundation with confidence and tactical sophistication.</li><li><strong>Guatemala:</strong> Never qualified — but a first World Cup berth is genuinely achievable under the 48-team format.</li><li><strong>El Salvador:</strong> Young squad, growing grassroots investment, developing a distinct national footballing identity.</li><li><strong>Nicaragua:</strong> Improving year-on-year as coaching education and facility access expands.</li></ul></div>
+<div class="lg-card"><h3>The MLS Effect</h3><p>The dramatic expansion of Major League Soccer has been transformative for Central American football. Dozens of Central American players gain top-level professional experience and elite coaching within MLS, returning to national squads with dramatically improved technical, tactical, and physical standards. The 2026 expansion makes realistic qualification pathways available to nations that previously needed a perfect storm of results just to reach a play-off round.</p></div>
+</section>
+<section id="stadiums" class="content-section" role="tabpanel">
+<h2>Stadiums & Host Cities</h2>
+<img src="https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=900&q=80" alt="Stadium aerial night view" class="section-image" loading="lazy">
+<p>Sixteen world-class venues across three nations — from sun-baked Mexico City altitude to Miami's neon coastline and Vancouver's forested mountains — make 2026 the most geographically diverse and architecturally spectacular World Cup ever staged. Combined venue capacity across all 16 stadiums exceeds one million spectators per matchday cycle.</p>
+<div class="lg-card"><h3>USA — 11 Venues</h3><ul><li><strong>MetLife Stadium</strong>, NJ — 82,500 — FINAL VENUE</li><li><strong>AT&T Stadium</strong>, Dallas TX — 80,000</li><li><strong>Arrowhead Stadium</strong>, Kansas City MO — 76,416</li><li><strong>NRG Stadium</strong>, Houston TX — 72,220</li><li><strong>Mercedes-Benz Stadium</strong>, Atlanta GA — 71,000</li><li><strong>SoFi Stadium</strong>, Los Angeles CA — 70,240</li><li><strong>Lincoln Financial Field</strong>, Philadelphia PA — 69,796</li><li><strong>Lumen Field</strong>, Seattle WA — 69,000</li><li><strong>Levi's Stadium</strong>, San Francisco CA — 68,500</li><li><strong>Hard Rock Stadium</strong>, Miami FL — 65,326</li><li><strong>Gillette Stadium</strong>, Boston MA — 65,878</li></ul></div>
+<div class="lg-card"><h3>Mexico & Canada</h3><ul><li><strong>Estadio Azteca</strong>, Mexico City — 87,500 — 3x World Cup host: 1970, 1986, 2026</li><li><strong>Estadio BBVA</strong>, Monterrey — 51,350</li><li><strong>Estadio Akron</strong>, Guadalajara — 49,850</li><li><strong>BC Place</strong>, Vancouver — 54,500</li><li><strong>BMO Field</strong>, Toronto — expanded to 50,000+</li></ul></div>
+</section>
+<section id="mascots" class="content-section" role="tabpanel">
+<h2>Mascots & Visual Branding</h2>
+<img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=900&q=80" alt="Creative branding design" class="section-image" loading="lazy">
+<p>The 2026 FIFA World Cup visual identity is one of the most ambitious branding projects in the tournament's history — a bold, culturally rich design system celebrating the extraordinary diversity of three vastly different nations while unifying them under a single iconic global brand.</p>
+<div class="lg-card"><h3>The Official Emblem</h3><p>Designed by Saffron Brand Consultants, the 2026 emblem integrates the FIFA World Cup Trophy silhouette with the bold numerals "26" — creating an instantly recognisable mark that works equally well across every medium. The design is modular: each of the 16 host cities has its own variant incorporating local cultural motifs, colours, and architectural references, making every host city feel genuinely part of the tournament identity rather than simply an anonymous backdrop.</p></div>
+<div class="lg-card"><h3>We Are 26 Campaign</h3><p>FIFA's overarching theme unites supporters of all 48 nations under a single banner. Campaign activations include large-scale public art murals by 48 local artists (one per competing nation) in every host city, a global tournament anthem featuring artists from all three host nations, AR campaigns across TikTok and Instagram timed to matchdays, and a 12-part documentary series following qualification journeys from players across 12 nations — bringing deeply human stories from Bolivia, Bangladesh, and Botswana to global audiences for the first time.</p></div>
+</section>
+<section id="youngstars" class="content-section" role="tabpanel">
+<h2>Ones to Watch</h2>
+<img src="https://images.unsplash.com/photo-1503428593586-e225b39bddfe?w=900&q=80" alt="Football player action" class="section-image" loading="lazy">
+<p>The 2026 World Cup arrives at a generational crossroads — an extraordinary new wave of talent steps fully into the spotlight. These are the players who will define this tournament and potentially their entire era of the game.</p>
+<div class="lg-card"><h3>Established Stars</h3><ul><li><strong>Kylian Mbappe (France, 27):</strong> World Cup winner at 19, hat-trick scorer in the 2022 final, Real Madrid's undisputed talisman. The 2026 World Cup is his tournament to own entirely.</li><li><strong>Vinicius Jr. (Brazil, 25):</strong> Two-time Champions League winner. Electric pace, devastating finishing, mature tactical intelligence. Brazil's most credible route to a sixth world title.</li><li><strong>Lautaro Martinez (Argentina, 28):</strong> The Inter Milan striker who is Argentina's undisputed leader following Messi's retirement. A World Cup winner, serial champion, and one of the most complete centre-forwards in world football heading into 2026.</li><li><strong>Jude Bellingham (England, 22):</strong> Dynamic, goals, leadership, big-match temperament. England's brightest international hope in a generation at the peak of his powers.</li><li><strong>Pedri (Spain, 23):</strong> Barcelona's midfield heartbeat. Composure, vision, and technical quality recalling Xavi Hernandez at his finest.</li></ul></div>
+<div class="lg-card"><h3>The Breakthrough Generation</h3><ul><li><strong>Lamine Yamal (Spain, 18):</strong> Born the day Messi won his first World Cup. Champions League winner and Euro hero at 16. The most extraordinary teenage talent since Messi.</li><li><strong>Endrick (Brazil, 19):</strong> The teenage striker Real Madrid invested a record fee for. Explosive, clinical, fearless on big stages.</li><li><strong>Warren Zaire-Emery (France, 19):</strong> PSG's extraordinarily mature central midfielder. Exceptional passing range, intelligent positioning, composure beyond his years.</li><li><strong>Pau Cubarsi (Spain, 17):</strong> Barcelona's teenage centre-back performing at Champions League standard. Composed, dominant, excellent in possession.</li><li><strong>Desire Doue (France, 19):</strong> PSG's versatile attacker. Dribbling brilliance, pace, developing goal threat. One of European football's most exciting young prospects.</li></ul></div>
+</section>
+<section id="greengames" class="content-section" role="tabpanel">
+<h2>Sustainability — Green Games</h2>
+<img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?w=900&q=80" alt="Green sustainable nature" class="section-image" loading="lazy">
+<p>Hosting a major sporting event across an entire continent presents unprecedented environmental challenges. FIFA and the three host nations have committed to a comprehensive Green Games framework to make 2026 the most environmentally responsible World Cup in history.</p>
+<div class="lg-card"><h3>Regional Match Clustering</h3><p>The most impactful sustainability decision was dividing host cities into three geographic clusters — West (Los Angeles, San Francisco, Seattle, Vancouver, Guadalajara, Mexico City), Central (Dallas, Kansas City, Houston, Monterrey), and East (New York/NJ, Boston, Philadelphia, Miami, Atlanta, Toronto). Teams can potentially play all three group matches within a 500-mile radius — drastically reducing intercontinental travel. This clustering approach alone is projected to reduce transport-related carbon emissions by over 40% compared to previous multi-continent hosts.</p></div>
+<div class="lg-card"><h3>Energy, Waste & Water</h3><ul><li><strong>100% Renewable Energy</strong> across all 16 venues during tournament operations.</li><li><strong>Zero-Landfill Stadiums</strong> — 100% of waste diverted through composting, recycling, and energy recovery.</li><li><strong>Smart Water Systems</strong> — 40% reduction in water consumption across all venues and training facilities vs Qatar 2022 benchmarks.</li><li><strong>Fully Electric Official Fleet</strong> — all FIFA vehicles charged exclusively from renewable sources.</li><li><strong>Single-Use Plastic Ban</strong> across all 16 official venues. All packaging certified compostable or recyclable.</li></ul></div>
+</section>
+<section id="goldenglove" class="content-section" role="tabpanel">
+<h2>Tournament Awards</h2>
+<img src="https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=900&q=80" alt="Football trophy awards" class="section-image" loading="lazy">
+<p>At every World Cup, FIFA presents individual awards recognising the tournament's finest performers. A Golden Boot or Golden Ball at a World Cup can define a player's legacy forever and cement their place in football's historical pantheon.</p>
+<div class="lg-card"><h3>The Major Awards</h3><ul><li><strong>Golden Ball — Best Player:</strong> Voted by accredited media. Recent winners: Messi (2022 & 2014), Modric (2018), Muller (2010). Messi's 2022 win is widely considered the most deserved individual award in World Cup history.</li><li><strong>Golden Boot — Top Goalscorer:</strong> First tiebreaker: most assists; second: fewest minutes. Recent winners: Mbappe 2022 (8 goals), Kane 2018 (6), James Rodriguez 2014 (6).</li><li><strong>Golden Glove — Best Goalkeeper:</strong> Named after Soviet legend Lev Yashin. Recent winners: Emiliano Martinez (2022), Courtois (2018), Neuer (2014).</li><li><strong>Best Young Player:</strong> Best player aged 21 or under at the start of the tournament year. Recent winners: Pedri (2022), Mbappe (2018), Pogba (2014).</li><li><strong>FIFA Fair Play Trophy:</strong> Best disciplinary record and on/off-pitch conduct throughout the entire tournament.</li></ul></div>
+<div class="lg-card"><h3>The Trophy Itself</h3><p>The FIFA World Cup Trophy is cast in solid 18-carat gold with a malachite base — 36.8cm tall, 6.175kg. Sculpted by Italian artist Silvio Gazzaniga in 1974, it depicts two human figures holding up the Earth. Only heads of state and FIFA-designated World Cup winners may touch the original; all others receive a gold-plated replica. The base has space for winners' names until 2038.</p></div>
+</section>
+<section id="fanfests" class="content-section" role="tabpanel">
+<h2>FIFA Fan Festivals</h2>
+<img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80" alt="Fan festival crowd" class="section-image" loading="lazy">
+<p>FIFA Fan Festivals — free-entry public celebrations in host city centres — have evolved into one of the most beloved institutions of the modern World Cup. Since Germany 2006, these events have transformed public spaces into joyful, multicultural celebrations welcoming fans regardless of ticket access, nationality, or budget.</p>
+<div class="lg-card"><h3>What's at a 2026 Fan Festival</h3><ul><li><strong>Giant 4K LED Screens:</strong> Cinema-quality broadcast of every match — some screens exceeding 200 square metres — delivering premium audio and visual quality to thousands of supporters simultaneously.</li><li><strong>Live Entertainment:</strong> Daily concerts, DJ sets, and cultural performances representing all three host nations and competing countries.</li><li><strong>International Food Village:</strong> Culinary experiences celebrating cuisine from all 48 competing nations — effectively a food World Cup running alongside the football tournament.</li><li><strong>Interactive Football Zones:</strong> Penalty simulators, freestyle challenges, VR match experiences, and autograph sessions with World Cup legends.</li><li><strong>Family Sections:</strong> Supervised safe spaces for children with age-appropriate football activities throughout all operating hours.</li><li><strong>Official Merchandise Stores:</strong> The only guaranteed public access points outside stadiums where all official 2026 tournament merchandise is available.</li></ul></div>
+<div class="lg-card"><h3>Scale & Global Reach</h3><p>Official Fan Festivals confirmed in all 16 host cities. FIFA has partnered with 60+ cities globally for Official Viewing Parties. The 2026 World Cup will be the first to deploy real-time AI translation at all Fan Festival public address systems — automatically converting announcements into the top 12 languages present at each venue. Combined anticipated attendance across all global Fan Festivals and Viewing Parties: over 50 million people worldwide.</p></div>
+</section>
+
+<!-- PREDICTOR -->
+<section id="predictor-tab" class="content-section" role="tabpanel">
+  <h2>🔮 Interactive Match Predictor</h2>
+  <p>Predict the opening group match scorelines for all three host nations and get instant analysis. Adjust the scores to test different scenarios — who do you think goes deep in 2026?</p>
+  <p>The predictor calculates win/draw/loss outcomes, total goals, and a statistical summary of your forecast. Share your predictions with friends before the tournament kicks off!</p>
+  <div style="display:flex;flex-direction:column;gap:12px;margin-top:10px">
+    <div class="pred-row"><label for="s-usa">🇺🇸 USA</label><input type="number" id="s-usa" min="0" max="99" value="2"><span>vs</span><input type="number" id="s-opp1" min="0" max="99" value="1"><label for="s-opp1" style="text-align:right">🇸🇦 Saudi Arabia</label></div>
+    <div class="pred-row"><label for="s-mex">🇲🇽 Mexico</label><input type="number" id="s-mex" min="0" max="99" value="2"><span>vs</span><input type="number" id="s-opp2" min="0" max="99" value="0"><label for="s-opp2" style="text-align:right">🇩🇿 Algeria</label></div>
+    <div class="pred-row"><label for="s-can">🇨🇦 Canada</label><input type="number" id="s-can" min="0" max="99" value="1"><span>vs</span><input type="number" id="s-opp3" min="0" max="99" value="1"><label for="s-opp3" style="text-align:right">🇷🇸 Serbia</label></div>
+    <button class="btn" onclick="calcPrediction()">⚡ Calculate Results</button>
+    <button class="btn btn-reset" onclick="resetPrediction()">🔄 Reset All</button>
+    <div id="prediction-output"></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="content-section" role="tabpanel">
+  <h2>✉️ Contact the Developer</h2>
+  <p>Have feedback, a feature request, a content correction, or just want to share your World Cup predictions? Fill in the form below and Gaspar will respond as soon as possible. All messages are read and genuinely appreciated — this hub is built for football fans, by a football fan.</p>
+  <form id="hub-contact-form" style="display:flex;flex-direction:column;gap:14px;margin-top:14px" onsubmit="handleFormSubmit(event)">
+    <div class="form-group"><label for="form-name">Full Name</label><input type="text" id="form-name" placeholder="Your full name" required></div>
+    <div class="form-group"><label for="form-email">Email Address</label><input type="email" id="form-email" placeholder="your@email.com" required></div>
+    <div class="form-group"><label for="form-subject">Subject</label><input type="text" id="form-subject" placeholder="What is your message about?"></div>
+    <div class="form-group"><label for="form-msg">Your Message</label><textarea id="form-msg" rows="6" placeholder="Write your message here..." required style="resize:vertical"></textarea></div>
+    <button type="submit" class="btn">📨 Send Message</button>
+  </form>
+  <div id="form-success">✅ Message sent successfully! Gaspar will be in touch soon. Thank you for your feedback.</div>
+</section>
+
+<!-- WALL CHART OUTPUT -->
+<div id="dynamic-poster-area" class="dynamic-panel">
+  <h3>🗺️ FIFA World Cup 2026 — Full Wall Chart (All 48 Teams)</h3>
+  <p style="font-size:.88rem;color:#445;margin-bottom:14px">All 12 groups shown below. Print or download as CSV to track every result throughout the tournament.</p>
+  <div class="poster-grid" id="poster-content"></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+    <button class="btn btn-sm" onclick="buildWallChart()">🔄 Regenerate</button>
+    <button class="btn btn-sm" onclick="printWallChart()">🖨️ Print Chart</button>
+    <button class="btn btn-green btn-sm" onclick="downloadWallChartCSV()">📥 Download CSV</button>
+  </div>
+</div>
+
+<!-- SWEEPSTAKE OUTPUT -->
+<div id="dynamic-sweepstake-area" class="dynamic-panel">
+  <h3>🎟️ Sweepstake Tickets — All 48 Teams Randomised</h3>
+  <p style="font-size:.88rem;color:#445;margin-bottom:14px">Shuffled ✅ — hand one ticket to each participant. Print or download as CSV below.</p>
+  <div class="sweep-grid" id="sweepstake-content"></div>
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px">
+    <button class="btn btn-sm" onclick="generateSweepstake()">🔄 Regenerate</button>
+    <button class="btn btn-sm" onclick="printSweepstake()">🖨️ Print All Tickets</button>
+    <button class="btn btn-green btn-sm" onclick="downloadSweepstakeCSV()">📥 Download CSV</button>
+  </div>
+</div>
+</main>
+</div>
+<footer>⚽ © 2026 FIFA World Cup Information Hub &nbsp;|&nbsp; Designed &amp; Developed by <strong>Gaspar</strong> &nbsp;|&nbsp; 🇺🇸 🇲🇽 🇨🇦</footer>
+<script>
+const TEAMS=[{g:"A",t:"USA",f:"🇺🇸",c:"CONCACAF"},{g:"A",t:"Morocco",f:"🇲🇦",c:"CAF"},{g:"A",t:"Saudi Arabia",f:"🇸🇦",c:"AFC"},{g:"A",t:"Belgium",f:"🇧🇪",c:"UEFA"},{g:"B",t:"Mexico",f:"🇲🇽",c:"CONCACAF"},{g:"B",t:"Argentina",f:"🇦🇷",c:"CONMEBOL"},{g:"B",t:"Algeria",f:"🇩🇿",c:"CAF"},{g:"B",t:"Australia",f:"🇦🇺",c:"AFC"},{g:"C",t:"Canada",f:"🇨🇦",c:"CONCACAF"},{g:"C",t:"Serbia",f:"🇷🇸",c:"UEFA"},{g:"C",t:"South Korea",f:"🇰🇷",c:"AFC"},{g:"C",t:"Senegal",f:"🇸🇳",c:"CAF"},{g:"D",t:"France",f:"🇫🇷",c:"UEFA"},{g:"D",t:"Brazil",f:"🇧🇷",c:"CONMEBOL"},{g:"D",t:"Nigeria",f:"🇳🇬",c:"CAF"},{g:"D",t:"Japan",f:"🇯🇵",c:"AFC"},{g:"E",t:"England",f:"🏴",c:"UEFA"},{g:"E",t:"Uruguay",f:"🇺🇾",c:"CONMEBOL"},{g:"E",t:"Egypt",f:"🇪🇬",c:"CAF"},{g:"E",t:"Iran",f:"🇮🇷",c:"AFC"},{g:"F",t:"Spain",f:"🇪🇸",c:"UEFA"},{g:"F",t:"Colombia",f:"🇨🇴",c:"CONMEBOL"},{g:"F",t:"Panama",f:"🇵🇦",c:"CONCACAF"},{g:"F",t:"Ivory Coast",f:"🇨🇮",c:"CAF"},{g:"G",t:"Germany",f:"🇩🇪",c:"UEFA"},{g:"G",t:"Portugal",f:"🇵🇹",c:"UEFA"},{g:"G",t:"Ghana",f:"🇬🇭",c:"CAF"},{g:"G",t:"Ecuador",f:"🇪🇨",c:"CONMEBOL"},{g:"H",t:"Netherlands",f:"🇳🇱",c:"UEFA"},{g:"H",t:"Chile",f:"🇨🇱",c:"CONMEBOL"},{g:"H",t:"Uzbekistan",f:"🇺🇿",c:"AFC"},{g:"H",t:"Mali",f:"🇲🇱",c:"CAF"},{g:"I",t:"Croatia",f:"🇭🇷",c:"UEFA"},{g:"I",t:"Denmark",f:"🇩🇰",c:"UEFA"},{g:"I",t:"Honduras",f:"🇭🇳",c:"CONCACAF"},{g:"I",t:"Qatar",f:"🇶🇦",c:"AFC"},{g:"J",t:"Italy",f:"🇮🇹",c:"UEFA"},{g:"J",t:"Poland",f:"🇵🇱",c:"UEFA"},{g:"J",t:"South Africa",f:"🇿🇦",c:"CAF"},{g:"J",t:"Jamaica",f:"🇯🇲",c:"CONCACAF"},{g:"K",t:"Switzerland",f:"🇨🇭",c:"UEFA"},{g:"K",t:"Austria",f:"🇦🇹",c:"UEFA"},{g:"K",t:"Jordan",f:"🇯🇴",c:"AFC"},{g:"K",t:"New Zealand",f:"🇳🇿",c:"OFC"},{g:"L",t:"Turkiye",f:"🇹🇷",c:"UEFA"},{g:"L",t:"Slovakia",f:"🇸🇰",c:"UEFA"},{g:"L",t:"Venezuela",f:"🇻🇪",c:"CONMEBOL"},{g:"L",t:"Costa Rica",f:"🇨🇷",c:"CONCACAF"}];
+function switchTab(e,id){e.preventDefault();document.querySelectorAll(".content-section").forEach(s=>s.classList.remove("active-content"));document.querySelectorAll(".navbar a").forEach(a=>a.classList.remove("active"));const sec=document.getElementById(id);if(sec)sec.classList.add("active-content");const tab=document.getElementById("tab-"+id);if(tab)tab.classList.add("active");window.scrollTo({top:0,behavior:"smooth"});}
+function buildWallChart(){const area=document.getElementById("dynamic-poster-area");const con=document.getElementById("poster-content");area.style.display="block";con.innerHTML="";const g={};TEAMS.forEach(t=>{if(!g[t.g])g[t.g]=[];g[t.g].push(t);});Object.keys(g).sort().forEach(k=>{const d=document.createElement("div");d.className="poster-group";d.innerHTML="<strong>Group "+k+"</strong>"+g[k].map(t=>"<span>"+t.f+" "+t.t+"</span>").join("");con.appendChild(d);});document.getElementById("dl-wall-btn").style.display="block";document.getElementById("pr-wall-btn").style.display="block";area.scrollIntoView({behavior:"smooth",block:"start"});}
+function printWallChart(){const g={};TEAMS.forEach(t=>{if(!g[t.g])g[t.g]=[];g[t.g].push(t);});const w=window.open("","_blank");const h=Object.keys(g).sort().map(k=>"<div class='gp'><strong>Group "+k+"</strong>"+g[k].map(t=>"<div>"+t.f+" "+t.t+"</div>").join("")+"</div>").join("");w.document.write("<!DOCTYPE html><html><head><title>2026 Wall Chart</title><style>body{font-family:sans-serif;padding:20px}h1{text-align:center;margin-bottom:16px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.gp{border:2px solid #1565c0;border-radius:8px;padding:10px}.gp strong{display:block;background:#1565c0;color:#fff;padding:4px 8px;border-radius:5px;margin-bottom:8px}div{padding:2px 0;font-size:.9rem;border-bottom:1px solid #eee}@media print{body{padding:6px}}</style></head><body><h1>FIFA World Cup 2026 — Wall Chart</h1><div class='grid'>"+h+"</div></body></html>");w.document.close();setTimeout(()=>w.print(),600);}
+function downloadWallChartCSV(){let c="Group,Team,Confederation\n";TEAMS.forEach(t=>{c+=t.g+","+t.t+","+t.c+"\n";});dl(c,"FIFA_2026_Wall_Chart.csv");}
+let shuffled=[];
+function generateSweepstake(){shuffled=[...TEAMS].sort(()=>Math.random()-.5);const area=document.getElementById("dynamic-sweepstake-area");const con=document.getElementById("sweepstake-content");area.style.display="block";con.innerHTML="";shuffled.forEach((t,i)=>{const d=document.createElement("div");d.className="sweep-ticket";d.innerHTML="<span class='t-num'>TICKET #"+String(i+1).padStart(2,"0")+"</span><span class='t-flag'>"+t.f+"</span><span class='t-name'>"+t.t+"</span><span class='t-conf'>"+t.c+" · Group "+t.g+"</span>";con.appendChild(d);});document.getElementById("dl-sweep-btn").style.display="block";document.getElementById("pr-sweep-btn").style.display="block";area.scrollIntoView({behavior:"smooth",block:"start"});}
+function printSweepstake(){if(!shuffled.length)generateSweepstake();const w=window.open("","_blank");const h=shuffled.map((t,i)=>"<div class='tk'><div class='n'>TICKET #"+String(i+1).padStart(2,"0")+"</div><div class='fl'>"+t.f+"</div><div class='nm'>"+t.t+"</div><div class='cf'>"+t.c+" · Group "+t.g+"</div></div>").join("");w.document.write("<!DOCTYPE html><html><head><title>2026 Sweepstake</title><style>body{font-family:sans-serif;padding:16px}h1{text-align:center;margin-bottom:16px}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.tk{border:2px dashed #1565c0;border-radius:10px;padding:14px;text-align:center;page-break-inside:avoid}.n{font-size:.7rem;color:#888;margin-bottom:4px}.fl{font-size:2rem}.nm{font-weight:800;color:#0d3a7a;margin:4px 0}.cf{font-size:.73rem;color:#555}@media print{body{padding:6px}}</style></head><body><h1>FIFA World Cup 2026 — Sweepstake Tickets</h1><div class='grid'>"+h+"</div></body></html>");w.document.close();setTimeout(()=>w.print(),600);}
+function downloadSweepstakeCSV(){if(!shuffled.length)generateSweepstake();let c="Ticket,Team,Confederation,Group\n";shuffled.forEach((t,i)=>{c+=(i+1)+","+t.t+","+t.c+","+t.g+"\n";});dl(c,"FIFA_2026_Sweepstake.csv");}
+function dl(content,filename){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([content],{type:"text/csv"}));a.download=filename;a.click();}
+function calcPrediction(){const v=[["s-usa","USA","s-opp1","Saudi Arabia"],["s-mex","Mexico","s-opp2","Algeria"],["s-can","Canada","s-opp3","Serbia"]];let html="",tot=0,hg=0;v.forEach(([hid,hn,aid,an])=>{const hs=parseInt(document.getElementById(hid).value)||0,as=parseInt(document.getElementById(aid).value)||0;tot+=hs+as;hg+=hs;let res,bg;if(hs>as){res="✅ WIN: <strong>"+hn+"</strong>";bg="rgba(30,120,40,.1)";}else if(as>hs){res="✅ WIN: <strong>"+an+"</strong>";bg="rgba(192,21,21,.08)";}else{res="🤝 DRAW";bg="rgba(41,121,255,.08)";}html+="<div class='pred-item' style='background:"+bg+"'>"+hn+" <strong>"+hs+"</strong> – <strong>"+as+"</strong> "+an+" | "+res+"<br><small style='color:#556'>Goals in match: "+(hs+as)+"</small></div>";});html+="<div class='pred-item'>Host goals total: <strong>"+hg+"</strong> | Avg goals/match: <strong>"+(tot/3).toFixed(1)+"</strong></div>";const out=document.getElementById("prediction-output");out.innerHTML=html;out.style.display="block";}
+function resetPrediction(){["s-usa","s-opp1","s-mex","s-opp2","s-can","s-opp3"].forEach(id=>{document.getElementById(id).value=0;});const out=document.getElementById("prediction-output");out.innerHTML="";out.style.display="none";}
+function handleFormSubmit(e){e.preventDefault();document.getElementById("hub-contact-form").style.display="none";document.getElementById("form-success").style.display="block";}
+</script>
+</body>
+</html>
